@@ -1,0 +1,67 @@
+body {
+    font-family: Arial, sans-serif; /*FUENTE*/
+    background-color: #f2f2f2;    /*FONDO*/
+    padding: 20px;                  /*Define un espacio de relleno de 20 píxeles alrededor del cuerpo del documento*/
+}
+
+h1 {
+    text-align: center;             /*Centra el texto del encabezado*/
+    color: #333;                  /*Define el color del texto*/
+    margin-top: 20px;               /* Agrega un margen en la parte superior del h1 */
+}
+
+form {
+    text-align: center;             /*Centra el contenido del formulario*/
+    max-width: 350px;               /*Limita el ancho máximo del formulario a 350 píxeles*/
+    margin: 0 auto;                 /*se utiliza para centrar horizontalmente el formulario dentro de su contenedor*/
+}
+
+input[type="text"] {
+    padding: 8px;                   /*Define un espacio de relleno de 8 píxeles alrededor del campo de entrada*/
+    font-size: 14px;                /*TAMAÑO*/
+    border: 1px solid #007bff;    /*establece un borde de 1 píxel de grosor, sólido y de color azul*/     
+    border-radius: 5px;             /*Aplica un borde redondeado de 5 píxeles a la caja de texto*/
+    margin-bottom: 10px;            /*Agrega un margen inferior de 10 píxeles para separar los campos de entrada*/
+    display: block;                 /*el elemento ocupará todo el ancho disponible horizontalmente y forzará a cualquier elemento adyacente a aparecer debajo de él*/
+    width: calc(100% - 22px);       /*usa todo el ancho menos 22 pixeles*/
+}
+
+input[type="submit"] {
+    padding: 8px ;                  /*Establece un espacio de relleno de 8 píxeles en todas las direcciones alrededor del contenido del botón*/  
+    font-size: 14px;                /*TAMAÑO*/
+    background-color: #007bff;    /*FONDO*/  
+    color: #fff;                  /*COLOR DE TEXTO*/
+    border: none;                   /*Elimina el borde del botón*/
+    border-radius: 5px;             /*Aplica un borde redondeado de 5 píxeles al botón*/
+    cursor: pointer;                /*Cambia el cursor del mouse cuando se coloca sobre el botón para indicar que es interactivo*/
+    transition: background-color 0.3s;  /*Cuando el cursor pasa sobre el botón, el color de fondo cambiará suavemente*/
+    display: block;                 /*Define el botón como un elemento de bloque*/
+    width: calc(100% - 5px);        /*usa todo el ancho menos 5 pixeles*/
+}
+input[type="submit"]:hover {
+    background-color: #0056b3;  /*el color de fondo del botón cambia suavemente a un tono más oscuro de azul*/
+}
+
+#resultado {
+    text-align: center;           /*alinea el texto al centro*/
+    background-color: #f9f9f9;  /*FONDO*/
+    padding: 20px;                /*Define un espacio de relleno de 20 píxeles alrededor del contenido del elemento*/
+    border-radius: 10px;          /*Aplica un radio de borde de 10 píxeles*/
+    margin-top: 20px;             /*Establece un margen superior de 20 píxeles*/
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /*Aplica una sombra alrededor del elemento*/
+}
+
+#resultado p {
+    margin: 0;  /* Elimina cualquier margen predeterminado del elemento de párrafo*/
+    color: #333;  /*COLOR DE TEXTO*/
+}
+
+.error {
+    text-align: center;           /*alineacion en el centro*/
+    color: red;                 /*Color de texto*/
+    font-weight: bold;            /*Negrita*/
+    border: 2px solid #ff0000;  /* Establece un borde de 2 píxeles sólido de color rojo */
+    background-color: #ffe6e6;  /*Establece el color de fondo del elemento en un tono rosa claro*/
+    padding: 10px;                /*Define un espacio de relleno de 10 píxeles alrededor del contenido del elemento*/
+    border-radius: 5px;           /*Aplica un radio de borde de 5 píxeles*/
+}   
