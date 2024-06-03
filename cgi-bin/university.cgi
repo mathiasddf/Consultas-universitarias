@@ -23,3 +23,14 @@ unless ($universidad_input) {
 # Variable para almacenar los detalles de la universidad encontrada
 my %detalles_universidad;
 
+# Manejo de errores para la apertura del archivo CSV
+open my $fh, '<', $file_path or do {
+    print header('text/html');
+    print "<html><head><title>Error</title></head><body>";
+    print "<h1>Error</h1>";
+    print "<p>No se pudo abrir el archivo CSV: $!</p>";
+    print "</body></html>";
+    exit;
+};
+
+
