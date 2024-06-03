@@ -54,3 +54,20 @@ while (my $line = <$fh>) {
     }
 }
 
+# Cerrar el archivo CSV
+close $fh;
+
+# Imprimir los detalles de la universidad encontrada
+print header('text/html');
+print "<html><head><title>Resultados de la Consulta</title></head><body>";
+print "<h1>Resultados de la Consulta</h1>";
+if (%detalles_universidad) {
+    print "<p><strong>Nombre Universidad:</strong> $detalles_universidad{'Nombre Universidad'}</p>";
+    print "<p><strong>Periodo Licenciamiento:</strong> $detalles_universidad{'Periodo Licenciamiento'}</p>";
+    print "<p><strong>Departamento Local:</strong> $detalles_universidad{'Departamento Local'}</p>";
+    print "<p><strong>Denominación Programa:</strong> $detalles_universidad{'Denominación Programa'}</p>";
+    
+} else {
+    print "<p>No se encontraron detalles para la universidad: $universidad_input</p>";
+}
+print "</body></html>";
