@@ -20,3 +20,6 @@ unless ($universidad_input) {
     exit;
 }
 
+# Variable para almacenar los detalles de la universidad encontrada
+my %detalles_universidad;
+
