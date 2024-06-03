@@ -33,4 +33,10 @@ open my $fh, '<', $file_path or do {
     exit;
 };
 
+# Leer todas las líneas del archivo
+while (my $line = <$fh>) {
+
+    
+}
+
 
