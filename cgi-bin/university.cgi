@@ -3,6 +3,8 @@ use strict;
 use warnings;
 use CGI qw(:standard);
 use CGI::Carp qw(fatalsToBrowser);
+use utf8;
+binmode(STDOUT, ":utf8");
 
 # Ruta al archivo CSV
 my $file_path = "C:/xampp/cgi-bin/ProgramasUniversidades.csv";
@@ -58,16 +60,23 @@ while (my $line = <$fh>) {
 close $fh;
 
 # Imprimir los detalles de la universidad encontrada
-print header('text/html');
-print "<html><head><title>Resultados de la Consulta</title></head><body>";
-print "<h1>Resultados de la Consulta</h1>";
+print header(-type => 'text/html', -charset => 'UTF-8'),
+	start_html(-title => 'Resultado de la Consulta', -style => {'src' => "/Lab6_pweb1/style.css"});
+print "</head><body>";
+print "<div id='cgi-contenedor'>";
+# Contenido de la consulta
+print "<h1 class='universidad-h1'>Resultados de la Consulta</h1>";
 if (%detalles_universidad) {
-    print "<p><strong>Nombre Universidad:</strong> $detalles_universidad{'Nombre Universidad'}</p>";
-    print "<p><strong>Periodo Licenciamiento:</strong> $detalles_universidad{'Periodo Licenciamiento'}</p>";
-    print "<p><strong>Departamento Local:</strong> $detalles_universidad{'Departamento Local'}</p>";
-    print "<p><strong>Denominación Programa:</strong> $detalles_universidad{'Denominación Programa'}</p>";
-    
+    # Contenedor individual para cada conjunto de campos
+    print "<div class='resultado-box'>";
+    print "<p class='universidad-p'><strong class =campos>Nombre Universidad:</strong> $detalles_universidad{'Nombre Universidad'}</p><br>";
+    print "<p class='universidad-p'><strong class =campos>Periodo Licenciamiento:</strong> $detalles_universidad{'Periodo Licenciamiento'}</p><br>";
+    print "<p class='universidad-p'><strong class =campos>Departamento Local:</strong> $detalles_universidad{'Departamento Local'}</p><br>";
+    print "<p class='universidad-p'><strong class =campos>Denominación Programa:</strong> $detalles_universidad{'Denominación Programa'}</p><br>";
+    print "</div>"; # Cierre del contenedor individual
 } else {
-    print "<p>No se encontraron detalles para la universidad: $universidad_input</p>";
+    print "<p class='universidad-p'>No se encontraron detalles para la universidad: $universidad_input</p>";
 }
+print "</div>";
 print "</body></html>";
+print end_html;
