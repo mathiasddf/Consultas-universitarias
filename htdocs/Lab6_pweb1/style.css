@@ -1,3 +1,121 @@
-body{
+
+body {
+    background-image: url('https://images.unsplash.com/photo-1457369804613-52c61a468e7d?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Zm9uZG8lMjBkZSUyMHBhbnRhbGxhJTIwZGVsJTIwbGlicm98ZW58MHx8MHx8fDA%3D');
+    background-repeat: no-repeat;
+    background-size: 1550px 365px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
     
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    height: 50vh;
+    background-color: rgba(255, 255, 255, 0.5); 
+    z-index: -1; /* Asegura que esté detrás de otros elementos */
+}
+body::after {
+    content: '';
+    position: absolute;
+    top: 50vh; /* Comienza desde la mitad de la página */
+    left: 0;
+    width: 100%;
+    height: 50vh; /* La otra mitad de la altura del viewport */
+    background-color:   rgb(255, 244, 234); 
+    z-index: -1; /* Asegura que esté detrás de otros elementos */
+}
+
+h1 {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 80px;
+    font-size: 48px; 
+    font-weight: bold;
+    
+}
+
+form {
+    text-align: center;
+    max-width: 650px; 
+    width: 100%;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.5); 
+    margin: auto; 
+}
+
+input[type='text'] {
+    width: 500px; 
+    padding: 10px; 
+    font-size: 16px; 
+    border-radius: 20px;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+label {
+    font-size: 20px;
+    font-weight: bold; 
+}
+input[type="submit"] {
+    background-color: #4CAF50; 
+    color: white; 
+    padding: 12px 20px; 
+    border: none; 
+    border-radius: 4px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049; 
+}
+
+
+.universidad-h1 {
+    text-align: center;
+    margin-top: 20px;
+}
+.campos{
+    font-weight: bold;
+}
+.universidad-p {
+    
+    margin: 10px 0;
+    color: #333; 
+    font-size: 18px; 
+    border-bottom: 1px solid #ccc; 
+    padding-bottom: 10px; 
+}
+#cgi-contenedor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color:   rgb(255, 244, 234); 
+    z-index: 1; 
+    
+    
+}
+.resultado-box {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px; 
+    width: 100%;
+    margin: auto; 
+    margin-top: 50px; 
+    margin-bottom: 50px; 
+    height: 300px; 
 }
