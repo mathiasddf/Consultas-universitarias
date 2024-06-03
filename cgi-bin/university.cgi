@@ -40,7 +40,17 @@ while (my $line = <$fh>) {
     if ($line =~ /^(.*?)\|(.+?)\|(.+?)\|(.+?)\|(.+?)\|(.+?)\|(.+?)\|(.+?)\|(.+?)\|(.+?)\|(.+?)\|(.+?)\|(.+?)\|(.+?)\|(.+?)\|(.+?)\|(.+?)\|(.+?)\|(.+?)\|(.+?)\|(.+?)\|(.+?)\|(.+?)\|(.+?)\|(.+?)\|(.+?)$/) {
         my @campos = ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24, $25);
 
-        
+        # Si el nombre de la universidad coincide con el nombre ingresado en el formulario
+        if ($campos[1] eq $universidad_input) {
+            # Almacenar los campos en el hash
+            %detalles_universidad = (
+                'Nombre Universidad' => $campos[1],
+                'Periodo Licenciamiento' => $campos[6],
+                'Departamento Local' => $campos[12],
+                'Denominación Programa' => $campos[18]
+            );
+            last; # Salir del bucle una vez que se encuentren los detalles
+        }
     }
 }
 
